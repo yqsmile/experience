@@ -1,0 +1,19 @@
+python虚拟环境安装kivy中问题
+conda 创建虚拟环境:
+conda create -n kivy python=3.6
+激活kivy:
+conda activate kivy
+安装依赖库:
+sudo apt install mesa-common-dev libgl1-mesa-dev
+安装cython:
+pip install cython
+在后续安装kivy遇到问题如下:error Do not use this file, it is the result of a failed Cython compilation.
+这是因为kivy对cython 0.28.2版本不支持,所以卸载重新安装低版本cython
+pip install cython==0.25.2
+#建立so库的引用链接，不知什么原因/x86_64的so在原来目录下会报错找不到
+#cp -s /usr/lib/x86_64-linux-gnu/libGL.so.1 /usr/lib/libGL.so
+安装pyopengl
+pip install pyopengl
+安装kivy
+pip install kivy
+
